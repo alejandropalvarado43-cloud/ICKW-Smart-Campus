@@ -24,13 +24,50 @@
     </header>
 
     <main>
-        <!-- Aquí Xochitl va a agregar las 3 secciones: 
-             ¿Qué es? / Características / Ejemplos -->
+           <!-- Sección 1: ¿Qué es? -->
+        <section id="que-es">
+            <h2>¿Qué es la Capa 2: Enlace de Datos?</h2>
+            <p>
+                La Capa de Enlace de Datos es la segunda capa del modelo OSI. Se encarga de facilitar la transferencia de datos de forma confiable a través de un medio físico dentro de una misma red local (LAN). Toma los paquetes provenientes de la Capa de Red y los transforma en <strong>tramas (frames)</strong> para ser enviados directamente entre dispositivos conectados físicamente.
+            </p>
+        </section>
 
-             <section id="diagrama">
-                <h2>Como viajan los datos entre dispositivos</h2>
-                <p></p><!--Xochil agrege aqui un diagrama que explique brevemente como se comunican los dispositivos, hagala con ia si quiere pero que se vea bien-->
-             </section>
+        <!-- Sección 2: Características -->
+        <section id="caracteristicas">
+             <h2>Características Principales</h2>
+            <ul>
+                <li><strong>Direccionamiento Físico (Dirección MAC):</strong> Utiliza identificadores únicos grabados en las tarjetas de red de cada dispositivo para saber exactamente a quién enviar la información.</li>
+                <li><strong>Detección y Control de Errores:</strong> Incluye mecanismos (como el CRC o Comprobación de Redundancia Cíclica) para detectar si los datos sufrieron daños al viajar por el cable o la señal Wi-Fi.</li>
+                <li><strong>Control de Flujo:</strong> Asegura que un dispositivo muy rápido no sobresature de datos a uno más lento.</li>
+                <li><strong>Subcapas LLC y MAC:</strong> Se divide en dos subcapas: <em>LLC (Logical Link Control)</em> que interactúa con la capa superior, y <em>MAC (Media Access Control)</em> que gestiona el acceso al medio físico.</li>
+            </ul> 
+              <div class="sabias-que">
+                💡 <strong>¿Sabías que...?</strong> Las direcciones MAC se graban permanentemente en el chip de la tarjeta de red desde su fabricación en la fábrica, por lo que también se les conoce como "direcciones de quemado" (<em>Burned-In Address / BIA</em>).
+            </div>
+        </section>
+
+        <!-- Sección 3: Ejemplos -->
+        <section id="ejemplos">
+            <h2>Ejemplos y Tecnologías</h2>
+            <ul>
+                <li><strong>Switch Ethernet:</strong> Dispositivo principal de Capa 2 que reenvía datos utilizando las direcciones MAC destino.</li>
+                <li><strong>Estándar Ethernet (IEEE 802.3):</strong> La tecnología de red de cable más común utilizada en las redes locales del campus.</li>
+                <li><strong>Wi-Fi (IEEE 802.11):</strong> Encargada del manejo del enlace de datos a nivel inalámbrico.</li>
+                <li><strong>Dirección MAC:</strong> Ejemplo: <code>1A-2B-3C-4D-5E-6F</code>.</li>
+            </ul>
+        </section>
+
+        <!-- Sección 4: Diagrama -->
+        <section id="diagrama">
+            <h2>Cómo viajan los datos entre dispositivos</h2>
+            <p>
+                El siguiente diagrama ilustra cómo la Capa 2 empaqueta los datos en tramas agregando direcciones MAC de origen y destino para enviarlos directamente de un dispositivo a otro mediante un switch.
+            </p>
+            <figure>
+                <img src="img/diagrama-capa2.jpg" alt="Diagrama de flujo de datos en Capa 2 usando direcciones MAC y Switch">
+                <figcaption>Flujo de datos en la red local (Capa 2) desde la computadora emisor hacia la receptora a través del Switch.</figcaption>
+            </figure>
+        </section>
     </main>
 
     <footer>
