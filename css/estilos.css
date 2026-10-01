@@ -165,8 +165,8 @@ footer p {
     }
 }
 
-/* --- Ethernet (tarjeta tipo artículo dentro de conceptos) --- */
-#ethernet {
+/* --- Artículos (Ethernet, ARP, Broadcast, Unicast) --- */
+main article {
     background-color: white;
     border-left: 5px solid #0d1b2a;
     border-radius: 10px;
@@ -175,7 +175,7 @@ footer p {
     box-shadow: 0 3px 10px rgba(13, 27, 42, 0.10);
 }
 
-#ethernet h3 {
+main article h3 {
     color: #0d1b2a;
     font-size: 1.4rem;
     margin-bottom: 15px;
@@ -183,25 +183,25 @@ footer p {
     border-bottom: 2px solid #0d1b2a;
 }
 
-#ethernet h4 {
+main article h4 {
     color: #0d1b2a;
     font-size: 1.05rem;
     margin-top: 14px;
     margin-bottom: 6px;
 }
 
-#ethernet p {
+main article p {
     color: #37474f;
     line-height: 1.7;
     text-align: justify;
 }
 
-#ethernet ul {
+main article ul {
     padding-left: 25px;
     margin-top: 8px;
 }
 
-#ethernet ul li {
+main article ul li {
     color: #37474f;
     line-height: 1.7;
     margin-bottom: 12px;
@@ -497,4 +497,108 @@ footer p {
     .nav-dropdown.open .dropdown-content {
         display: block;
     }
+}
+
+/* -- TABLAS -- */
+
+.tabla-scroll {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+th, td {
+    border: 1px solid #cfd8dc;
+    padding: 10px 12px;
+    text-align: left;
+    color: #37474f;
+}
+
+th {
+    background-color: #0d1b2a;
+    color: white;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #f4f8fb;
+}
+
+/* -- LISTAS ORDENADAS Y DE DEFINICIONES -- */
+
+section ol {
+    padding-left: 25px;
+}
+
+section ol li {
+    color: #37474f;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+dt {
+    font-weight: 700;
+    color: #0d1b2a;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #37474f;
+    line-height: 1.7;
+}
+
+/* -- ENLACES DENTRO DE SECCIONES -- */
+
+section a {
+    color: #0d1b2a;
+    font-weight: 600;
+}
+
+/* -- NAVEGACIÓN ENTRE CAPAS -- */
+
+.nav-capas {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.nav-capas a {
+    background-color: #0d1b2a;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-capas a:hover {
+    color: #4fd8f0;
+}
+
+/* -- EVIDENCIAS Y CAPTURAS -- */
+
+#evidencias img,
+#pasos-lan img {
+    display: block;
+    max-width: 100%;
+    width: 700px;
+    height: auto;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    border: 2px solid #cfd8dc;
+}
+
+#pasos-lan figcaption {
+    color: #607d8b;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    text-align: center;
 }
