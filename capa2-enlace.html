@@ -87,6 +87,55 @@
             </ul>
         </section>
 
+        <article id="arp">
+    <h3>ARP (Address Resolution Protocol)</h3>
+
+    <h4>¿Qué es?</h4>
+    <p>Protocolo que relaciona una dirección IP lógica con una dirección MAC física, permitiendo que los dispositivos se encuentren dentro de la misma red local.</p>
+
+    <h4>Características</h4>
+    <ul>
+        <li>Envía una solicitud en broadcast preguntando "¿quién tiene esta IP?"</li>
+        <li>El dispositivo dueño de esa IP responde con su dirección MAC</li>
+        <li>El resultado se guarda temporalmente en la tabla ARP</li>
+    </ul>
+
+    <h4>Ejemplos</h4>
+    <p>Antes de que PC0 pueda enviar un ping a PC1, primero usa ARP para conocer la dirección MAC de PC1.</p>
+        </article>
+        <article id="broadcast">
+    <h3>Broadcast</h3>
+
+    <h4>¿Qué es?</h4>
+    <p>Un tipo de comunicación donde un dispositivo envía información a todos los demás dispositivos de la red local al mismo tiempo.</p>
+
+    <h4>Características</h4>
+    <ul>
+        <li>Usa la dirección MAC especial FF:FF:FF:FF:FF:FF</li>
+        <li>Todos los dispositivos de la red reciben el mensaje</li>
+    </ul>
+
+    <h4>Ejemplos</h4>
+    <p>Las solicitudes ARP se envían como broadcast, ya que el dispositivo no sabe todavía a quién pertenece la IP que busca.</p>
+        </article>
+
+        <article id="unicast">
+    <h3>Unicast</h3>
+
+    <h4>¿Qué es?</h4>
+    <p>Un tipo de comunicación donde un dispositivo envía información directamente a un único destinatario específico.</p>
+
+    <h4>Características</h4>
+    <ul>
+        <li>Usa la dirección MAC específica del destinatario</li>
+        <li>Es más eficiente que broadcast porque no satura la red</li>
+    </ul>
+
+    <h4>Ejemplos</h4>
+    <p>Una vez que PC0 conoce la MAC de PC1 (gracias a ARP), el ping se envía como unicast, directo a PC1.</p>
+        </article>
+
+
         <!-- Sección 4: Diagrama -->
         <section id="diagrama">
             <h2>Cómo viajan los datos entre dispositivos</h2>
@@ -121,6 +170,13 @@
         <section id="funcionamiento-lan">
             <h2>Funcionamiento de la LAN</h2>
             <p>En una red LAN como la que construimos en el Laboratorio 2, cuatro computadoras se conectan a un mismo switch dentro de la red 192.168.10.0/24. Cuando una PC quiere comunicarse con otra, primero usa ARP para descubrir la dirección MAC del destino, luego arma una trama Ethernet con esa MAC, y el switch se encarga de reenviarla únicamente al puerto correcto, basándose en su tabla de direcciones MAC aprendidas dinámicamente.</p>
+        </section>
+
+        <section id="evidencias">
+    <h2>Evidencias de la práctica</h2>
+    <p>A continuación se muestra la topología construida en Cisco Packet Tracer para el Laboratorio 2, junto con los resultados de las pruebas de conectividad realizadas.</p>
+    <img src="img/topologia-lab2.png" alt="Topología de la red LAN con 4 PCs y switch">
+    <img src="img/tabla-mac.png" alt="Tabla de direcciones MAC aprendidas por el switch">
         </section>
     </main>
 

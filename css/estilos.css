@@ -498,3 +498,84 @@ footer p {
         display: block;
     }
 }
+
+/* --- TARJETAS PARA ARTÍCULOS (ARP, Broadcast, Unicast) --- */
+article {
+    background-color: white;
+    border-left: 5px solid #0d1b2a;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(13, 27, 42, 0.10);
+}
+
+article h3 {
+    color: #0d1b2a;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0d1b2a;
+}
+
+article h4 {
+    color: #0d1b2a;
+    font-size: 1.05rem;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+article p {
+    color: #37474f;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+article ul {
+    padding-left: 25px;
+    margin-top: 8px;
+}
+
+article ul li {
+    color: #37474f;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* -- SECCIONES DE EVIDENCIAS (IDÉNTICO AL DIAGRAMA) -- */
+
+#evidencias {
+    text-align: center;
+}
+
+#evidencias p {
+    color: #37474f;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#evidencias figure {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#evidencias img {
+    display: block;
+    max-width: 100%;
+    width: 750px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid #cfd8dc;
+}
+
+#evidencias figcaption {
+    color: #607d8b;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
