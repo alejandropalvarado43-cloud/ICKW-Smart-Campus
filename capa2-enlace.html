@@ -5,26 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICKW Smart Campus - Capa 2 Enlace de Datos</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="JS/script.js"></script>
 </head>
 <body>
 
-    <header>
-        <h1>ICKW Smart Campus</h1>
-        <img src="img/logo.jpg" alt="Logo del proyecto ICKW Smart Campus">
-        <p>Capa 2 - Enlace de Datos: Comunicación Local</p>
+<header class="header-tech">
+    <nav class="navbar-tech">
+        <a href="index.html" class="logo-tech">
+            <img src="img/logo.jpg" alt="Logo ICKW Smart Campus" class="logo-icon-img">
+            <div class="logo-text">ICKW <span>SMART CAMPUS</span></div>
+        </a>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="equipo1/capa1-fisica.html">Capa 1 - Física</a></li>
-                <li><a href="capa2-enlace.html">Capa 2 - Enlace (actual)</a></li>
-                <li><a href="equipo3/capa3-red.html">Capa 3 - Red</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+
+            <div class="nav-dropdown" id="menuOSI">
+                <button class="nav-dropdown-toggle" id="toggleOSI" type="button">
+                    Modelo OSI <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="equipo1/capa1-fisica.html">Capa 1 - Física</a>
+                    <a href="capa2-enlace.html" class="active">Capa 2 - Enlace</a>
+                    <a href="equipo3/capa3-red.html">Capa 3 - Red</a>
+                    <a href="equipo4/capa4-transporte.html">Capa 4 - Transporte</a>
+                    <a href="equipo5/capa5-sesion.html">Capa 5 - Sesión</a>
+                    <a href="equipo6/capa6-presentacion.html">Capa 6 - Presentación</a>
+                    <a href="equipo7/capa7-aplicacion.html">Capa 7 - Aplicación</a>
+                </div>
+            </div>
+
+            <a href="recursos.html" class="nav-link">Recursos</a>
+            <a href="proyecto.html" class="nav-link">Proyecto</a>
+        </div>
+    </nav>
+
+    <div class="header-hero">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+
+        <div class="hero-tag">
+            <span class="status-dot"></span>
+            CAPA 2 · MODELO OSI
+        </div>
+
+        <h1>Enlace de Datos: <span>Comunicación Local</span></h1>
+        <p>Cómo los dispositivos dentro de una misma red se identifican y se comunican usando direcciones MAC, tramas y switches.</p>
+    </div>
+</header>
 
     <main>
-           <!-- Sección 1: ¿Qué es? -->
+        <!-- Sección 1: ¿Qué es? -->
         <section id="que-es">
             <h2>¿Qué es la Capa 2: Enlace de Datos?</h2>
             <p>
@@ -34,14 +64,14 @@
 
         <!-- Sección 2: Características -->
         <section id="caracteristicas">
-             <h2>Características Principales</h2>
+            <h2>Características Principales</h2>
             <ul>
                 <li><strong>Direccionamiento Físico (Dirección MAC):</strong> Utiliza identificadores únicos grabados en las tarjetas de red de cada dispositivo para saber exactamente a quién enviar la información.</li>
                 <li><strong>Detección y Control de Errores:</strong> Incluye mecanismos (como el CRC o Comprobación de Redundancia Cíclica) para detectar si los datos sufrieron daños al viajar por el cable o la señal Wi-Fi.</li>
                 <li><strong>Control de Flujo:</strong> Asegura que un dispositivo muy rápido no sobresature de datos a uno más lento.</li>
                 <li><strong>Subcapas LLC y MAC:</strong> Se divide en dos subcapas: <em>LLC (Logical Link Control)</em> que interactúa con la capa superior, y <em>MAC (Media Access Control)</em> que gestiona el acceso al medio físico.</li>
-            </ul> 
-              <div class="sabias-que">
+            </ul>
+            <div class="sabias-que">
                 💡 <strong>¿Sabías que...?</strong> Las direcciones MAC se graban permanentemente en el chip de la tarjeta de red desde su fabricación en la fábrica, por lo que también se les conoce como "direcciones de quemado" (<em>Burned-In Address / BIA</em>).
             </div>
         </section>
@@ -67,6 +97,30 @@
                 <img src="img/diagrama-capa2.jpg" alt="Diagrama de flujo de datos en Capa 2 usando direcciones MAC y Switch">
                 <figcaption>Flujo de datos en la red local (Capa 2) desde la computadora emisor hacia la receptora a través del Switch.</figcaption>
             </figure>
+        </section>
+
+        <!-- Sección 5: Ethernet -->
+        <article id="ethernet">
+            <h3>Ethernet</h3>
+
+            <h4>¿Qué es?</h4>
+            <p>Ethernet es el estándar de tecnología más utilizado para redes de área local (LAN). Define cómo se transmiten las tramas a través de cables como el UTP, incluyendo el formato de las tramas y las reglas para acceder al medio de transmisión.</p>
+
+            <h4>Características</h4>
+            <ul>
+                <li>Es el estándar más común en redes cableadas actuales</li>
+                <li>Define el formato de la trama Ethernet (con direcciones MAC de origen y destino)</li>
+                <li>Opera en la Capa 1 (Física) y Capa 2 (Enlace de Datos) del modelo OSI</li>
+            </ul>
+
+            <h4>Ejemplos</h4>
+            <p>Cuando conectamos una PC a un switch mediante un cable de red, esa comunicación se realiza siguiendo el estándar Ethernet.</p>
+        </article>
+
+        <!-- Sección 6: Funcionamiento de la LAN -->
+        <section id="funcionamiento-lan">
+            <h2>Funcionamiento de la LAN</h2>
+            <p>En una red LAN como la que construimos en el Laboratorio 2, cuatro computadoras se conectan a un mismo switch dentro de la red 192.168.10.0/24. Cuando una PC quiere comunicarse con otra, primero usa ARP para descubrir la dirección MAC del destino, luego arma una trama Ethernet con esa MAC, y el switch se encarga de reenviarla únicamente al puerto correcto, basándose en su tabla de direcciones MAC aprendidas dinámicamente.</p>
         </section>
     </main>
 
