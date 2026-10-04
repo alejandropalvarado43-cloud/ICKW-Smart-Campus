@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICKW Smart Campus - Capa 2 Enlace de Datos</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos-v2.css">
     <script src="JS/script.js"></script>
 </head>
 <body>
@@ -15,6 +16,12 @@
             <img src="img/logo.jpg" alt="Logo ICKW Smart Campus" class="logo-icon-img">
             <div class="logo-text">ICKW <span>SMART CAMPUS</span></div>
         </a>
+         
+        <form class="buscador" id="formBuscador" role="search">
+            <label for="buscador" class="solo-lector">Buscar en la Capa 2</label>
+            <input type="search" id="buscador" placeholder="Buscar: MAC, ARP, switch..." autocomplete="off">
+            <button type="submit" aria-label="Buscar">🔍</button>
+        </form>
 
         <div class="nav-menu">
             <a href="index.html" class="nav-link">Inicio</a>
@@ -39,21 +46,92 @@
         </div>
     </nav>
 
-    <div class="header-hero">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-
-        <div class="hero-tag">
-            <span class="status-dot"></span>
-            CAPA 2 · MODELO OSI
-        </div>
-
+   <div class="header-hero hero-split">
+    <div class="hero-texto">
+        <div class="hero-tag"><span class="status-dot"></span> CAPA 2 · MODELO OSI</div>
         <h1>Enlace de Datos: <span>Comunicación Local</span></h1>
         <p>Cómo los dispositivos dentro de una misma red se identifican y se comunican usando direcciones MAC, tramas y switches.</p>
+        <div class="hero-botones">
+            <a href="#pasos-lan" class="btn-hero">Ver paso a paso</a>
+            <a href="novedades-v2.html" class="btn-hero btn-sec">Novedades V2</a>
+        </div>
     </div>
+    <img src="img/Topología .png" alt="Topología de la red LAN del Laboratorio 2">
+</div>
+
 </header>
 
+    <div class="franja-novedades" aria-label="Últimas novedades">
+        <strong class="franja-etiqueta"><span class="status-dot"></span> Últimas novedades</strong>
+    <div class="franja-texto">
+        <a href="#arp" data-tab-link="arp">Nuevo: cómo funciona ARP</a>
+        <a href="#comparativo">Nuevo: tabla Broadcast vs Unicast</a>
+        <a href="#pasos-lan">Nuevo: paso a paso de una comunicación</a>
+        <a href="novedades-v2.html">Ver todas las novedades de la V2</a>
+    </div>
+</div>
+
     <main>
+
+    <section id="carrusel" class="plano">
+        <h2>Galería de la Capa 2</h2>
+        <div class="carrusel" id="carruselCapa2">
+                        <figure class="slide activo">
+                <img src="img/Topología .png" alt="Topología de la red LAN con cuatro PCs y un switch">
+                <figcaption>La red LAN del Laboratorio 2: cuatro PCs conectadas a un switch.</figcaption>
+            </figure>
+            <figure class="slide">
+                <img src="img/Captura de la simulacion envia de PC0 a PC1.png" alt="Captura de Packet Tracer en modo Simulation mostrando la trama enviada de PC0 a PC1">
+                <figcaption>Una trama viajando de PC0 a PC1 en el modo Simulation de Packet Tracer.</figcaption>
+            </figure>
+            <figure class="slide">
+                <img src="img/Captura de la simulacion resive de PC1 a PC0.png" alt="Captura de Packet Tracer en modo Simulation mostrando la respuesta de PC1 hacia PC0">
+                <figcaption>La respuesta de PC1 regresando a PC0 en el modo Simulation.</figcaption>
+            </figure>
+            <figure class="slide">
+                <img src="img/diagrama-capa2.jpg" alt="Diagrama del flujo de datos en Capa 2 con direcciones MAC y switch">
+                <figcaption>Cómo se empaquetan los datos en tramas con MAC de origen y destino.</figcaption>
+            </figure>
+            <button class="car-btn car-prev" type="button" aria-label="Imagen anterior">‹</button>
+            <button class="car-btn car-next" type="button" aria-label="Imagen siguiente">›</button>
+            <div class="car-puntos" id="carPuntos"></div>
+        </div>
+    </section>
+
+    <section id="tarjetas" class="plano">
+        <h2>Explora la Capa 2</h2>
+        <p id="sinResultados" class="sin-resultados" hidden>No encontramos ese tema. Prueba con "MAC", "switch" o "ARP".</p>
+        <div class="grid-tarjetas" id="gridTarjetas">
+            <a class="tarjeta" href="#que-es" data-keys="que es capa enlace datos trama frame lan">
+                <h3>¿Qué es la Capa 2?</h3><p>La capa que mueve tramas dentro de una red local.</p>
+            </a>
+            <a class="tarjeta" href="#caracteristicas" data-keys="mac direccion fisica crc errores flujo llc subcapas">
+                <h3>Direcciones MAC</h3><p>La identidad única de cada tarjeta de red.</p>
+            </a>
+            <a class="tarjeta" href="#ethernet" data-keys="ethernet 802.3 utp cable estandar">
+                <h3>Ethernet</h3><p>El estándar de las redes cableadas.</p>
+            </a>
+            <a class="tarjeta" href="#elementos-importancia" data-keys="switch tabla mac nic tarjeta trama">
+                <h3>Switch y tabla MAC</h3><p>Cómo el switch aprende y reenvía.</p>
+            </a>
+            <a class="tarjeta" href="#arp" data-tab-link="arp" data-keys="arp ip resolucion direcciones protocolo">
+                <h3>ARP</h3><p>Cómo una IP se convierte en una MAC.</p>
+            </a>
+            <a class="tarjeta" href="#comparativo" data-keys="broadcast unicast tabla comparativo">
+                <h3>Broadcast vs Unicast</h3><p>Dos formas de enviar una trama.</p>
+            </a>
+            <a class="tarjeta" href="#pasos-lan" data-keys="paso comunicacion pcs lan packet tracer">
+                <h3>Paso a paso en la LAN</h3><p>Cómo se hablan dos PCs.</p>
+            </a>
+            <a class="tarjeta" href="#diagrama" data-keys="diagrama flujo datos imagen">
+                <h3>Diagrama de flujo</h3><p>El viaje de la trama entre dos PCs.</p>
+            </a>
+            <a class="tarjeta" href="#relacion-capas" data-keys="relacion capas osi red fisica ip">
+                <h3>Relación con otras capas</h3><p>Qué recibe y qué entrega la Capa 2.</p>
+            </a>
+        </div>
+    </section>
+
         <!-- Sección 1: ¿Qué es? -->
         <section id="que-es">
             <h2>¿Qué es la Capa 2: Enlace de Datos?</h2>
@@ -120,14 +198,220 @@
         <!-- Sección 6: Funcionamiento de la LAN -->
         <section id="funcionamiento-lan">
             <h2>Funcionamiento de la LAN</h2>
-            <p>En una red LAN como la que construimos en el Laboratorio 2, cuatro computadoras se conectan a un mismo switch dentro de la red 192.168.10.0/24. Cuando una PC quiere comunicarse con otra, primero usa ARP para descubrir la dirección MAC del destino, luego arma una trama Ethernet con esa MAC, y el switch se encarga de reenviarla únicamente al puerto correcto, basándose en su tabla de direcciones MAC aprendidas dinámicamente.</p>
+            <p>En una red LAN como la que construimos en el Laboratorio 2, cuatro computadoras se conectan a un mismo switch dentro de la red 192.168.1.0/24. Cuando una PC quiere comunicarse con otra, primero usa ARP para descubrir la dirección MAC del destino, luego arma una trama Ethernet con esa MAC, y el switch se encarga de reenviarla únicamente al puerto correcto, basándose en su tabla de direcciones MAC aprendidas dinámicamente.</p>
         </section>
+            
+        <section id="bloques-info" class="plano">
+            <h2>Datos clave de la LAN</h2>
+            <div class="bloque-info">
+                <div>
+                    <h3>Una red, un switch</h3>
+                    <p>Las cuatro PCs del laboratorio comparten la red 192.168.1.0/24 y se conectan al mismo switch. Todo lo que ocurre entre ellas pasa por la Capa 2.</p>
+                </div>
+               <img src="img/Captura de la simulacion resive de PC1 a PC0.png" alt="Topología LAN del Laboratorio 2">
+            </div>
+            <div class="bloque-info">
+                <div>
+                    <h3>Se puede ver la trama</h3>
+                    <p>En el modo Simulation de Packet Tracer se observa cada trama con su MAC de origen y destino mientras viaja de una PC a otra.</p>
+                </div>
+                <img src="img/Captura de la simulacion envia de PC0 a PC1.png" alt="Modo Simulation de Packet Tracer con una trama en la red">
+            </div>
+        </section>
+
+        <!-- Sección 7: Paso a paso de la comunicación -->
+        <section id="pasos-lan">
+            <h2>Paso a paso: cómo se comunican dos PCs</h2>
+            <ol>
+                <li>PC0 (192.168.1.10) quiere enviar datos a PC1 (192.168.1.11) y revisa si ya conoce su dirección MAC.</li>
+                <li>Si no la conoce, manda una solicitud ARP en broadcast a toda la red.</li>
+                <li>PC1 reconoce su IP y responde con su dirección MAC.</li>
+                <li>PC0 arma la trama Ethernet con la MAC de origen y la MAC de destino.</li>
+                <li>El switch aprende la MAC de origen y reenvía la trama solo al puerto de PC1.</li>
+            </ol>
+                       <figure>
+                <img src="img/Captura de la simulacion envia de PC0 a PC1.png" alt="Captura del modo Simulation de Packet Tracer mostrando el recorrido de una trama">
+                <figcaption>Recorrido de una trama en el modo Simulation de Packet Tracer.</figcaption>
+            </figure>
+            <figure class="captura">
+                <img src="img/Captura de IP de la PC 0.png" alt="Configuración IP de la PC0 en Packet Tracer">
+                <figcaption>Configuración IP de PC0.</figcaption>
+            </figure>
+            <figure class="captura">
+                <img src="img/Captura de IP de la PC 1.png" alt="Configuración IP de la PC1 en Packet Tracer">
+                <figcaption>Configuración IP de PC1.</figcaption>
+            </figure>
+            <div class="sabias-que">
+                💡 <strong>¿Sabías que...?</strong> En nuestra práctica, la solicitud ARP llegó a todas las PCs, pero solo PC1 respondió.
+            </div>
+        </section>
+
+                <section id="pestanas" class="plano">
+            <h2>Más información</h2>
+            <div class="tabs" role="tablist">
+                <button class="tab-btn activo" role="tab" data-tab="arp" aria-selected="true" type="button">ARP</button>
+                <button class="tab-btn" role="tab" data-tab="broadcast" aria-selected="false" type="button">Broadcast</button>
+                <button class="tab-btn" role="tab" data-tab="unicast" aria-selected="false" type="button">Unicast</button>
+            </div>
+            <div class="tab-panel activo" id="arp" role="tabpanel">
+                <h3>ARP (Address Resolution Protocol)</h3>
+                <p>ARP descubre la dirección MAC que corresponde a una dirección IP dentro de la misma red. La solicitud viaja en broadcast y la respuesta regresa en unicast. Está definido en el RFC 826.</p>
+                    <figure class="captura">
+                    <img src="img/Captura para odtener ARP (arp -a).png" alt="Resultado del comando arp -a en una PC del Laboratorio 2 con las direcciones IP y MAC aprendidas">
+                    <figcaption>Tabla ARP de una PC obtenida con el comando arp -a.</figcaption>
+                </figure>
+            </div>
+            <div class="tab-panel" id="broadcast" role="tabpanel">
+                <h3>Broadcast</h3>
+                <p>Es una trama enviada a la MAC <code>FF:FF:FF:FF:FF:FF</code>. La reciben todos los dispositivos de la LAN. Se usa, por ejemplo, para las solicitudes ARP.</p>
+            </div>
+            <div class="tab-panel" id="unicast" role="tabpanel">
+                <h3>Unicast</h3>
+                <p>Es una trama dirigida a una sola MAC. El switch la reenvía únicamente al puerto de ese dispositivo, por eso es más eficiente que el broadcast.</p>
+            </div>
+        </section>
+
+        <!-- Sección 8: Broadcast vs Unicast -->
+        <section id="comparativo">
+            <h2>Broadcast vs Unicast</h2>
+            <p>Estas son las dos formas de enviar una trama que vimos en el laboratorio:</p>
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Broadcast</th>
+                            <th>Unicast</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MAC destino</td>
+                            <td>FF:FF:FF:FF:FF:FF</td>
+                            <td>MAC específica del destinatario</td>
+                        </tr>
+                        <tr>
+                            <td>Quién la recibe</td>
+                            <td>Todos los dispositivos de la LAN</td>
+                            <td>Un solo dispositivo</td>
+                        </tr>
+                        <tr>
+                            <td>Cuándo se usa</td>
+                            <td>Solicitudes ARP</td>
+                            <td>Ping y datos, cuando ya se conoce la MAC</td>
+                        </tr>
+                        <tr>
+                            <td>Efecto en la red</td>
+                            <td>Genera más tráfico</td>
+                            <td>Más eficiente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección 9: Elementos relacionados e importancia -->
+        <section id="elementos-importancia">
+            <h2>Elementos relacionados e importancia</h2>
+            <dl>
+                <dt>Tarjeta de red (NIC)</dt>
+                <dd>Contiene la dirección MAC y conecta el dispositivo al medio.</dd>
+                <dt>Switch</dt>
+                <dd>Aprende las direcciones MAC y reenvía cada trama solo al puerto correcto.</dd>
+                <dt>Tabla MAC</dt>
+                <dd>Registro de qué dirección MAC está conectada a cada puerto del switch.</dd>
+                <dt>Trama</dt>
+                <dd>Unidad de datos de la Capa 2: lleva MAC de origen, MAC de destino y CRC.</dd>
+            </dl>
+                <figure class="captura">
+                <img src="img/Captura de la tabla mac.png" alt="Tabla de direcciones MAC del switch del Laboratorio 2 con cada MAC y su puerto">
+                <figcaption>Tabla MAC del switch con las direcciones aprendidas.</figcaption>
+            </figure>
+            <p>En el Laboratorio 2 vimos que, sin direcciones MAC, el switch no sabría a qué puerto mandar cada trama y la enviaría a todos lados.</p>
+        </section>
+
+        <!-- Sección 10: Relación con otras capas -->
+        <section id="relacion-capas">
+            <h2>¿Cómo se relaciona nuestra capa con las demás?</h2>
+            <p>La Capa 2 recibe los paquetes de la Capa 3 (Red) y los encapsula en tramas con direcciones MAC. Después entrega esas tramas a la Capa 1 (Física), que las convierte en señales eléctricas, de luz o de radio. En el destino ocurre el proceso inverso. ARP conecta ambos mundos: relaciona la dirección IP (Capa 3) con la dirección MAC (Capa 2).</p>
+        </section>
+
+        <!-- Sección 11: Enlaces relacionados -->
+        <section id="enlaces">
+            <h2>Enlaces relacionados</h2>
+            <ul>
+                <li>En esta página: <a href="#arp" data-tab-link="arp">ARP</a>, <a href="#broadcast" data-tab-link="broadcast">Broadcast</a> y <a href="#unicast" data-tab-link="unicast">Unicast</a></li>
+                <li><a href="https://www.netacad.com/" target="_blank" rel="noopener">Cisco Networking Academy</a></li>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc826" target="_blank" rel="noopener">RFC 826: especificación de ARP</a></li>
+                <li><a href="novedades-v2.html">Novedades de la Segunda Versión</a></li>
+            </ul>
+        </section>
+
+        <!-- Sección 12: Fuentes consultadas -->
+        <section id="fuentes">
+            <h2>Fuentes consultadas</h2>
+            <ul>
+                <li>Cisco Networking Academy</li>
+                <li>RFC 826 (ARP)</li>
+                <li>Material proporcionado por la docente</li>
+                <li>Práctica del Laboratorio 2 en Cisco Packet Tracer</li>
+            </ul>
+                    <p><a href="documentos/fuentes-consultadas.html">Ver el documento de fuentes consultadas</a></p>
+        </section>
+
+        <!-- Navegación entre capas -->
+        <nav class="nav-capas" aria-label="Navegación entre capas">
+            <a href="equipo1/capa1-fisica.html">← Capa anterior: Física</a>
+            <a href="index.html">Inicio</a>
+            <a href="equipo3/capa3-red.html">Siguiente capa: Red →</a>
+        </nav>
+        
     </main>
 
-    <footer>
-        <p>Proyecto: ICKW Smart Campus</p>
-        <p>Equipo 2 - Capa 2: Enlace de Datos</p>
-    </footer>
+<footer class="footer-pro">
+    <div class="footer-grid">
+        <div class="footer-marca">
+            <a href="index.html" class="footer-logo">
+                <img src="img/logo.jpg" alt="Logo ICKW Smart Campus">
+                <span>ICKW <em>SMART CAMPUS</em></span>
+            </a>
+            <p>Portal educativo sobre el viaje de los datos a través del modelo OSI.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Esta página</h4>
+            <ul>
+                <li><a href="#que-es">¿Qué es la Capa 2?</a></li>
+                <li><a href="#tarjetas">Explora los temas</a></li>
+                <li><a href="#pasos-lan">Paso a paso en la LAN</a></li>
+                <li><a href="#comparativo">Broadcast vs Unicast</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Portal</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="novedades-v2.html">Novedades V2</a></li>
+                <li><a href="documentos/fuentes-consultadas.html">Fuentes consultadas</a></li>
+                <li><a href="equipo3/capa3-red.html">Siguiente capa: Red</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Referencias</h4>
+            <ul>
+                <li><a href="https://www.netacad.com/" target="_blank" rel="noopener">Cisco Networking Academy</a></li>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc826" target="_blank" rel="noopener">RFC 826 (ARP)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-base">
+        <p>Proyecto: ICKW Smart Campus · Equipo 2 - Capa 2: Enlace de Datos</p>
+        <p>Instituto Católico Karol Wojtyla · Bachillerato Técnico en Desarrollo de Software · ExpoTécnica 2026</p>
+    </div>
+</footer>
 
 </body>
 </html>
