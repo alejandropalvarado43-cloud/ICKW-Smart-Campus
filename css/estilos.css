@@ -5,26 +5,72 @@
     box-sizing: border-box;
 }
 
+
+/*  ESTRUCTURA GENERAL DEL PORTAL  */
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    color: #222;
-    background-color: #eef3f7;
-    line-height: 1.6;
+    color: #263445;
+    background: #edf2f7;
+    line-height: 1.65;
 }
 
-/* -- TIPOGRAFÍA DE TÍTULOS -- */
-h1, h2, h3 {
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-/* -- CONTENIDO PRINCIPAL -- */
-
+/* Área principal más amplia */
 main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1320px;
+    margin: 30px auto 55px;
+    padding: 0 28px;
 }
-/* -- HERO EN DOS COLUMNAS -- */
+
+/* Las secciones */
+main section,
+main article {
+    background: #ffffff;
+    border: 1px solid #dce5ee;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(21, 43, 68, 0.055);
+}
+
+/* Jerarquía visual de los títulos */
+main section h2,
+main article h3 {
+    color: #102b46;
+    font-size: 1.45rem;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2eaf2;
+}
+
+/* Texto */
+main section p,
+main article p {
+    color: #526174;
+    line-height: 1.8;
+}
+
+/* Imágenes adaptables */
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 700px) {
+    main {
+        padding: 0 14px;
+        margin: 20px auto 35px;
+    }
+
+    main section,
+    main article {
+        padding: 19px;
+        margin-bottom: 20px;
+    }
+}
+
+/*  HERO EN DOS COLUMNAS  */
 .header-hero.hero-split {
     max-width: 1000px;
     display: grid;
@@ -53,7 +99,7 @@ main {
     .hero-botones { justify-content: center; }
 }
 
-/* -- SECCIONES -- */
+/*  SECCIONES  */
 
 section {
     background-color: white;
@@ -79,7 +125,7 @@ section p {
     text-align: justify;
 }
 
-/* -- LISTAS -- */
+/*  LISTAS  */
 
 section ul {
     padding-left: 25px;
@@ -95,7 +141,7 @@ section li strong {
     color: #0d1b2a;
 }
 
-/* -- DIRECCIÓN MAC -- */
+/*  DIRECCIÓN MAC  */
 
 code {
     background-color: #dff8fc;
@@ -107,7 +153,7 @@ code {
     border: 1px solid #0d1b2a;
 }
 
-/* -- CUADRO SABÍAS QUE? -- */
+/*  CUADRO SABÍAS QUE?  */
 
 .sabias-que {
     background-color: #e0e4fa;
@@ -124,7 +170,7 @@ code {
     color: #0d1b2a;
 }
 
-/* -- DIAGRAMA -- */
+/*  DIAGRAMA  */
 
 #diagrama {
     text-align: center;
@@ -155,7 +201,7 @@ code {
     line-height: 1.5;
 }
 
-/* -- FOOTER -- */
+/*  FOOTER  */
 
 footer {
     background-color: #0d1b2a;
@@ -193,7 +239,7 @@ footer p {
     }
 }
 
-/* --- Artículos (Ethernet, ARP, Broadcast, Unicast) --- */
+/*  Artículos (Ethernet, ARP, Broadcast, Unicast)  */
 main article {
     background-color: white;
     border-left: 5px solid #0d1b2a;
@@ -245,13 +291,13 @@ main article ul li {
     position: relative;
     background: linear-gradient(135deg, #0d1b2a, #10233a 60%, #0d1b2a);
     color: white;
-    overflow: hidden;
+    overflow: visible;
 }
 
-/* --- Navbar --- */
+/*  Navbar  */
 .navbar-tech {
     position: relative;
-    z-index: 5;
+    z-index: 50;
     max-width: 1000px;
     margin: 0 auto;
     padding: 18px 20px;
@@ -327,7 +373,7 @@ main article ul li {
     width: 100%;
 }
 
-/* --- Bloque de introducción (mini-hero) --- */
+/*  Bloque de introducción (mini-hero)  */
 .header-hero {
     position: relative;
     z-index: 5;
@@ -399,7 +445,7 @@ main article ul li {
     line-height: 1.7;
 }
 
-/* --- Efectos de luz sutiles --- */
+/*  Efectos de luz sutiles  */
 .glow {
     position: absolute;
     border-radius: 50%;
@@ -424,7 +470,7 @@ main article ul li {
     left: 8%;
 }
 
-/* --- Dropdown Modelo OSI (activado por clic) --- */
+/*  Dropdown Modelo OSI  */
 .nav-dropdown {
     position: relative;
 }
@@ -497,7 +543,7 @@ main article ul li {
     color: var(--tech-cyan);
 }
 
-/* --- Responsive general del header/nav --- */
+/*  Responsive general del header/nav  */
 @media (max-width: 600px) {
     .navbar-tech {
         justify-content: center;
@@ -533,7 +579,7 @@ main article ul li {
     }
 }
 
-/* -- TABLAS -- */
+/*  TABLAS  */
 
 .tabla-scroll {
     overflow-x: auto;
@@ -562,7 +608,7 @@ tbody tr:nth-child(even) td {
     background-color: #f4f8fb;
 }
 
-/* -- LISTAS ORDENADAS Y DE DEFINICIONES -- */
+/* LISTAS ORDENADAS Y DE DEFINICIONES  */
 
 section ol {
     padding-left: 25px;
@@ -586,14 +632,14 @@ dd {
     line-height: 1.7;
 }
 
-/* -- ENLACES DENTRO DE SECCIONES -- */
+/*  ENLACES DENTRO DE SECCIONES  */
 
 section a {
     color: #0d1b2a;
     font-weight: 600;
 }
 
-/* -- NAVEGACIÓN ENTRE CAPAS -- */
+/*  NAVEGACIÓN ENTRE CAPAS  */
 
 .nav-capas {
     display: flex;
@@ -602,6 +648,7 @@ section a {
     flex-wrap: wrap;
     margin-bottom: 25px;
 }
+
 
 .nav-capas a {
     background-color: #0d1b2a;
@@ -617,7 +664,7 @@ section a {
     color: #4fd8f0;
 }
 
-/* -- EVIDENCIAS Y CAPTURAS -- */
+/*  EVIDENCIAS Y CAPTURAS  */
 
 #evidencias img,
 #pasos-lan img {
@@ -636,3 +683,257 @@ section a {
     margin-top: 10px;
     text-align: center;
 }
+
+
+/* DISTRIBUCIÓN */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;          /* una columna por defecto */
+    align-items: stretch;
+    gap: 24px;
+}
+
+
+main.dos-columnas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+main section,
+main article {
+    min-width: 0;
+    margin: 0;
+}
+
+/* Dentro de una página a dos columnas, estas ocupan todo el ancho */
+main.dos-columnas #carrusel,
+main.dos-columnas #tarjetas,
+main.dos-columnas #bloques-info,
+main.dos-columnas #pestanas,
+main.dos-columnas #pasos-lan,
+main.dos-columnas #comparativo,
+main.dos-columnas #relacion-capas,
+main.dos-columnas #enlaces,
+main.dos-columnas #fuentes,
+main.dos-columnas .nav-capas {
+    grid-column: 1 / -1;
+}
+
+/* Evita que las secciones añadan espacios innecesarios */
+main section,
+main article {
+    min-width: 0;
+    margin: 0;
+}
+
+/* Secciones que ocupan todo el ancho*/
+#carrusel,
+#tarjetas,
+#bloques-info,
+#pestanas,
+#pasos-lan,
+#comparativo,
+#relacion-capas,
+#enlaces,
+#fuentes,
+.nav-capas {
+    grid-column: 1 / -1;
+}
+
+/*  Tarjetas  */
+
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 145px;
+    padding: 22px;
+    background: #f7faff;
+    border: 1px solid #dce6f0;
+    border-radius: 10px;
+    color: #263d56;
+    text-decoration: none;
+    transition: transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    border-color: #20a6c5;
+    box-shadow: 0 8px 20px rgba(16, 43, 70, 0.09);
+}
+
+.tarjeta h3 {
+    margin-bottom: 8px;
+    color: #123754;
+    font-size: 1.05rem;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 0.91rem;
+    line-height: 1.6;
+}
+
+/*  galeria  */
+
+#carrusel .carrusel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #102b46;
+}
+
+#carrusel .slide img {
+    display: block;
+    width: 100%;
+    max-height: 440px;
+    object-fit: contain;
+}
+
+#carrusel figcaption {
+    padding: 12px 18px;
+    color: #ffffff;
+    background: #102b46;
+    text-align: center;
+}
+
+/* Bloques de informacion */
+
+.bloque-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.bloque-info:last-child {
+    border-bottom: none;
+}
+
+.bloque-info img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 9px;
+    background: #f4f7fa;
+}
+
+/* Tablas y pestañas */
+
+.tabla-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tab-btn {
+    padding: 10px 18px;
+    border: 1px solid #d5e1ec;
+    border-radius: 7px;
+    background: #f2f6fa;
+    color: #23435f;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.tab-btn.activo {
+    background: #123754;
+    border-color: #123754;
+    color: #ffffff;
+}
+
+/*  Navegacion de capas  */
+
+.nav-capas {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #dce5ee;
+    border-radius: 12px;
+}
+
+.nav-capas a {
+    display: inline-block;
+    padding: 11px 17px;
+    background: #123754;
+    color: #ffffff;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-capas a:hover {
+    background: #1c587e;
+}
+
+/*  Responsive  */
+
+@media (max-width: 900px) {
+    main,
+    main.dos-columnas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+    main > section,
+    main > article,
+    #carrusel,
+    #tarjetas,
+    #bloques-info,
+    #pestanas,
+    #pasos-lan,
+    #comparativo,
+    #relacion-capas,
+    #enlaces,
+    #fuentes,
+    .nav-capas {
+        grid-column: 1;
+    }
+
+    .grid-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+@media (max-width: 560px) {
+    .grid-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque-info {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-capas {
+        flex-direction: column;
+    }
+
+    .nav-capas a {
+        text-align: center;
+    }
+
+    #carrusel .slide img {
+        max-height: 260px;
+    }
+}
+
