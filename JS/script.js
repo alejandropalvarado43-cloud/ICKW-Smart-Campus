@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/* ===== INTERACTIVIDAD V2: carrusel, buscador y pestañas ===== */
+/* INTERACTIVIDAD V2: carrusel, buscador y pestañas  */
 document.addEventListener("DOMContentLoaded", function () {
 
     /* Carrusel */

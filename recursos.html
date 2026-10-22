@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos - Capa 2 Enlace de Datos - ICKW Smart Campus</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos-v2.css">
+</head>
+<body>
+
+<header class="header-tech">
+    <nav class="navbar-tech">
+        <a href="index.html" class="logo-tech">
+            <img src="img/logo.jpg" alt="Logo ICKW Smart Campus" class="logo-icon-img">
+            <div class="logo-text">ICKW <span>SMART CAMPUS</span></div>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="capa2-enlace.html" class="nav-link">Capa 2 - Enlace</a>
+            <a href="recursos.html" class="nav-link active">Recursos</a>
+            <a href="novedades-v2.html" class="nav-link">Novedades</a>
+            <a href="documentos/fuentes-consultadas.html" class="nav-link">Fuentes</a>
+        </div>
+    </nav>
+    <div class="header-hero">
+        <div class="hero-tag"><span class="status-dot"></span> EQUIPO 2 · CAPA 2</div>
+        <h1>Recursos de la <span>Capa de Enlace de Datos</span></h1>
+        <p>Glosario, comandos del laboratorio, herramientas y enlaces para entender y practicar la comunicación local.</p>
+    </div>
+</header>
+
+<main class="doc-pagina">
+
+    <!-- Glosario -->
+    <section id="glosario">
+        <h2>Glosario de la Capa 2</h2>
+        <dl>
+            <dt>Trama (frame)</dt>
+            <dd>Unidad de datos de la Capa 2. Lleva la MAC de origen, la MAC de destino, los datos y un código CRC para detectar errores.</dd>
+
+            <dt>Dirección MAC</dt>
+            <dd>Identificador único de 48 bits grabado en la tarjeta de red. Se escribe en hexadecimal, por ejemplo <code>1A-2B-3C-4D-5E-6F</code>.</dd>
+
+            <dt>NIC (tarjeta de red)</dt>
+            <dd>Componente que contiene la dirección MAC y conecta el dispositivo al medio de transmisión.</dd>
+
+            <dt>Switch</dt>
+            <dd>Dispositivo de Capa 2 que aprende las direcciones MAC y reenvía cada trama solo al puerto correcto.</dd>
+
+            <dt>Tabla MAC</dt>
+            <dd>Registro del switch que relaciona cada dirección MAC con el puerto donde fue aprendida.</dd>
+
+            <dt>ARP</dt>
+            <dd>Protocolo que descubre la dirección MAC que corresponde a una dirección IP dentro de la misma red.</dd>
+
+            <dt>Broadcast</dt>
+            <dd>Trama enviada a la MAC <code>FF:FF:FF:FF:FF:FF</code>, que reciben todos los dispositivos de la LAN.</dd>
+
+            <dt>Unicast</dt>
+            <dd>Trama dirigida a una sola dirección MAC.</dd>
+
+            <dt>CRC</dt>
+            <dd>Comprobación de Redundancia Cíclica: cálculo que permite detectar si una trama se dañó durante el viaje.</dd>
+
+            <dt>LLC y MAC (subcapas)</dt>
+            <dd>La Capa 2 se divide en LLC, que se comunica con la capa superior, y MAC, que controla el acceso al medio físico.</dd>
+
+            <dt>LAN</dt>
+            <dd>Red de área local: dispositivos conectados en un espacio reducido, como el Laboratorio 2.</dd>
+        </dl>
+    </section>
+
+    <!-- Comandos -->
+    <section id="comandos">
+        <h2>Comandos útiles del laboratorio</h2>
+        <p>Estos son los comandos que usamos en Cisco Packet Tracer para observar la Capa 2 en acción.</p>
+        <div class="tabla-scroll">
+            <table>
+                <thead>
+                    <tr><th>Comando</th><th>Dónde se usa</th><th>Para qué sirve</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ipconfig /all</code></td>
+                        <td>Símbolo del sistema de la PC</td>
+                        <td>Muestra la dirección IP y la dirección física (MAC) de la tarjeta de red.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ping 192.168.1.11</code></td>
+                        <td>Símbolo del sistema de la PC</td>
+                        <td>Comprueba la comunicación con otra PC de la LAN y provoca que se use ARP.</td>
+                    </tr>
+                    <tr>
+                        <td><code>arp -a</code></td>
+                        <td>Símbolo del sistema de la PC</td>
+                        <td>Muestra la tabla ARP: las direcciones IP y sus MAC aprendidas.</td>
+                    </tr>
+                    <tr>
+                        <td><code>arp -d</code></td>
+                        <td>Símbolo del sistema de la PC</td>
+                        <td>Borra las entradas ARP para repetir el proceso desde cero.</td>
+                    </tr>
+                    <tr>
+                        <td><code>show mac address-table</code></td>
+                        <td>CLI del switch</td>
+                        <td>Muestra la tabla MAC del switch con cada MAC y su puerto. En algunas versiones se escribe <code>show mac-address-table</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sabias-que">
+            💡 <strong>¿Sabías que...?</strong> Si ejecutas <code>arp -a</code> antes de hacer un <code>ping</code>, la tabla puede estar vacía. Después del ping aparece la MAC del destino.
+        </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section id="herramientas">
+        <h2>Herramientas para practicar</h2>
+        <ul>
+            <li><strong>Cisco Packet Tracer:</strong> simulador con el que armamos la LAN del Laboratorio 2 y observamos las tramas en modo Simulation.</li>
+            <li><strong>Símbolo del sistema (CMD):</strong> permite ejecutar <code>ipconfig</code>, <code>ping</code> y <code>arp</code> en una computadora real.</li>
+            <li><strong>Wireshark:</strong> analizador de tráfico que muestra las tramas Ethernet con sus direcciones MAC de origen y destino.</li>
+        </ul>
+    </section>
+
+    <!-- Material visual -->
+    <section id="material-visual" class="plano">
+        <h2>Material visual de la Capa 2</h2>
+        <p>Imágenes del laboratorio que puedes consultar para repasar cada tema.</p>
+
+        <figure class="captura">
+            <img src="img/diagrama-capa2.jpg" alt="Diagrama del flujo de datos en Capa 2 con direcciones MAC y switch">
+            <figcaption>Diagrama: cómo se empaquetan los datos en tramas con MAC de origen y destino.</figcaption>
+        </figure>
+
+        <figure class="captura">
+            <img src="img/Captura de la tabla mac.png" alt="Tabla de direcciones MAC del switch del Laboratorio 2 con cada MAC y su puerto">
+            <figcaption>Tabla MAC del switch con las direcciones aprendidas.</figcaption>
+        </figure>
+
+        <figure class="captura">
+            <img src="img/Captura para odtener ARP (arp -a).png" alt="Resultado del comando arp -a en una PC del Laboratorio 2">
+            <figcaption>Tabla ARP de una PC obtenida con el comando arp -a.</figcaption>
+        </figure>
+
+        <p><a href="capa2-enlace.html#pasos-lan">Ver el paso a paso completo en la página de la Capa 2</a></p>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section id="preguntas-frecuentes">
+        <h2>Preguntas frecuentes</h2>
+
+        <details>
+            <summary><strong>¿Qué hace la Capa 2 del modelo OSI?</strong></summary>
+            <p>Toma los paquetes de la Capa 3 y los convierte en tramas con direcciones MAC de origen y destino, para entregarlos entre dispositivos de la misma red local.</p>
+        </details>
+
+        <details>
+            <summary><strong>¿Cuál es la diferencia entre una dirección MAC y una dirección IP?</strong></summary>
+            <p>La MAC identifica la tarjeta de red y se usa dentro de la red local (Capa 2). La IP identifica al dispositivo en la red y permite comunicarse entre redes distintas (Capa 3).</p>
+        </details>
+
+        <details>
+            <summary><strong>¿Por qué el switch no envía todo a todos los puertos?</strong></summary>
+            <p>Porque aprende qué MAC está en cada puerto y guarda esa información en su tabla MAC. Así reenvía cada trama unicast solo al puerto del destinatario.</p>
+        </details>
+
+        <details>
+            <summary><strong>¿Para qué sirve ARP?</strong></summary>
+            <p>Para descubrir la MAC de un dispositivo cuando solo se conoce su IP. La solicitud viaja en broadcast y la respuesta regresa en unicast.</p>
+        </details>
+
+        <details>
+            <summary><strong>¿Qué pasa si una trama llega dañada?</strong></summary>
+            <p>El receptor calcula el CRC, lo compara con el que trae la trama y, si no coinciden, la descarta.</p>
+        </details>
+    </section>
+
+    <!-- Enlaces externos -->
+    <section id="enlaces-externos">
+        <h2>Enlaces para seguir aprendiendo</h2>
+        <ul>
+            <li><a href="https://www.netacad.com/" target="_blank" rel="noopener">Cisco Networking Academy</a>: cursos de redes y descarga de Packet Tracer.</li>
+            <li><a href="https://www.rfc-editor.org/rfc/rfc826" target="_blank" rel="noopener">RFC 826</a>: especificación original del protocolo ARP.</li>
+            <li><a href="https://www.rfc-editor.org/rfc/rfc894" target="_blank" rel="noopener">RFC 894</a>: cómo se transmiten datagramas IP sobre redes Ethernet.</li>
+            <li><a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a>: sitio oficial del analizador de tráfico.</li>
+        </ul>
+    </section>
+
+    <!-- Recursos técnicos -->
+    <section id="recursos-tecnicos">
+        <h2>Recursos técnicos del portal</h2>
+        <p>Estos son los archivos que el navegador descarga para mostrar esta página. Todos están dentro de la carpeta del portal, sin depender de ninguna computadora en particular.</p>
+        <div class="tabla-scroll">
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Ubicación</th><th>Función</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hoja de estilos</td>
+                        <td><code>css/estilos.css</code></td>
+                        <td>Colores, tipografía, encabezado, secciones, tablas y pie de página.</td>
+                    </tr>
+                    <tr>
+                        <td>Hoja de estilos</td>
+                        <td><code>css/estilos-v2.css</code></td>
+                        <td>Buscador, carrusel, tarjetas, pestañas y footer de la segunda versión.</td>
+                    </tr>
+                    <tr>
+                        <td>Script</td>
+                        <td><code>JS/script.js</code></td>
+                        <td>Menú desplegable Modelo OSI, carrusel, buscador y pestañas.</td>
+                    </tr>
+                    <tr>
+                        <td>Imágenes</td>
+                        <td><code>img/</code></td>
+                        <td>Logo, topología de la LAN, capturas de Packet Tracer y diagrama de la Capa 2.</td>
+                    </tr>
+                    <tr>
+                        <td>Documentos</td>
+                        <td><code>documentos/</code></td>
+                        <td>Fuentes consultadas en formato web y PDF.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Documentos del portal -->
+    <section id="documentos">
+        <h2>Documentos del portal</h2>
+        <ul>
+            <li><a href="documentos/fuentes-consultadas.html">Fuentes consultadas (página web)</a></li>
+            <li><a href="documentos/fuentes-consultadas.pdf" target="_blank" rel="noopener">Fuentes consultadas (PDF)</a></li>
+            <li><a href="novedades-v2.html">Novedades de la Segunda Versión</a></li>
+        </ul>
+    </section>
+
+    <nav class="nav-capas" aria-label="Navegación">
+        <a href="capa2-enlace.html">← Volver a la Capa 2</a>
+        <a href="index.html">Inicio</a>
+    </nav>
+</main>
+
+<footer class="footer-pro">
+    <div class="footer-grid">
+        <div class="footer-marca">
+            <a href="index.html" class="footer-logo">
+                <img src="img/logo.jpg" alt="Logo ICKW Smart Campus">
+                <span>ICKW <em>SMART CAMPUS</em></span>
+            </a>
+            <p>Portal educativo sobre el viaje de los datos a través del modelo OSI.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Esta página</h4>
+            <ul>
+                <li><a href="#glosario">Glosario</a></li>
+                <li><a href="#comandos">Comandos útiles</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+                <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                <li><a href="#enlaces-externos">Enlaces externos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Portal</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="capa2-enlace.html">Capa 2 - Enlace</a></li>
+                <li><a href="novedades-v2.html">Novedades V2</a></li>
+                <li><a href="documentos/fuentes-consultadas.html">Fuentes consultadas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Referencias</h4>
+            <ul>
+                <li><a href="https://www.netacad.com/" target="_blank" rel="noopener">Cisco Networking Academy</a></li>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc826" target="_blank" rel="noopener">RFC 826 (ARP)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-base">
+        <p>Proyecto: ICKW Smart Campus · Equipo 2 - Capa 2: Enlace de Datos</p>
+        <p>Instituto Católico Karol Wojtyla · Bachillerato Técnico en Desarrollo de Software · ExpoTécnica 2026</p>
+    </div>
+</footer>
+
+</body>
+</html>
